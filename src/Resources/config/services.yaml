@@ -6,3 +6,10 @@ services:
             $gatewayFactoryClass: Prometee\PayumStripe\StripeCheckoutSessionGatewayFactory
         tags:
             - { name: payum.gateway_factory_builder, factory: stripe_checkout_session }
+
+    prometee.payum_stripe_js.gateway_factory_builder:
+        class: Payum\Core\Bridge\Symfony\Builder\GatewayFactoryBuilder
+        arguments:
+            $gatewayFactoryClass: Prometee\PayumStripe\StripeJsGatewayFactory
+        tags:
+            - { name: payum.gateway_factory_builder, factory: stripe_js }
